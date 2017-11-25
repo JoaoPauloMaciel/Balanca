@@ -1,6 +1,8 @@
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.db import models
+from django.conf.urls import url, include
+from rest_framework import routers, serializers, viewsets
 
 
 class Pesagem(models.Model):
