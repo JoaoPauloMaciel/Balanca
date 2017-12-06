@@ -1,7 +1,9 @@
 from django.http import HttpResponse
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from balanca.serializers import UserSerializer, GroupSerializer
+from balanca.serializers import UserSerializer, GroupSerializer, PesosSerializer
+
+from balanca.models import Pesagem
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -18,6 +20,13 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+class PesosViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Pesagem.objects.all()
+    serializer_class = PesosSerializer
 
 def index(request):
     return HttpResponse("Hello, world. Essa é a view da balança!")
