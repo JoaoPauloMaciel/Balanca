@@ -8,7 +8,8 @@ from rest_framework import routers, serializers, viewsets
 class Pesagem(models.Model):
     peso = models.IntegerField(null=True)
     data = models.DateTimeField('date da pesagem', default=timezone.now)
-    usuario = models.ForeignKey(User ,null=True)
+    usuario = models.ForeignKey(User ,null=True, related_name='pesos')
+
 
 
 class Mensagem(models.Model):

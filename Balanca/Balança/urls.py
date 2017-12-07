@@ -8,9 +8,10 @@ from rest_framework_jwt.views import refresh_jwt_token
 from rest_framework_jwt.views import verify_jwt_token
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
-router.register(r'pesos', views.PesosViewSet)
+router.register(r'usuario', views.UserViewSet)
+router.register(r'groupo', views.GroupViewSet)
+router.register(r'peso', views.PesosViewSet)
+router.register(r'mensagem', views.MensagemViewSet)
 
 
 urlpatterns = [

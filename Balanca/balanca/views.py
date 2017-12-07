@@ -1,9 +1,9 @@
 from django.http import HttpResponse
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from balanca.serializers import UserSerializer, GroupSerializer, PesosSerializer
+from balanca.serializers import UserSerializer, GroupSerializer, PesosSerializer, MensagemSerializer
 
-from balanca.models import Pesagem
+from balanca.models import Pesagem, Mensagem
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -27,6 +27,12 @@ class PesosViewSet(viewsets.ModelViewSet):
     """
     queryset = Pesagem.objects.all()
     serializer_class = PesosSerializer
+
+class MensagemViewSet(viewsets.ModelViewSet):
+
+    queryset = Mensagem.objects.all()
+    serializer_class = MensagemSerializer
+
 
 def index(request):
     return HttpResponse("Hello, world. Essa é a view da balança!")
