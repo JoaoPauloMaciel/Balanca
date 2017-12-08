@@ -1,1 +1,2 @@
-phytho3 manage.py run server
+web: gunicorn gettingstarted.wsgi --log-file -
+python3 manage.py runserver
